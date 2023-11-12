@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "username": "L",
+            "age": 18,
+            "password": "Jdu211171",
+            "status": "admin"
+        },
+        {
+            "username": "Dovud",
+            "age": 21,
+            "password": "Jdu211171",
+            "status": "user"
+        },
+        {
+            "username": "qodir_29",
+            "age": 20,
+            "password": "Qodir111",
+            "status": "admin"
+        }
+    ]
+}

@@ -61,6 +61,6 @@ def mergeTwoLists(list1, list2):
 #     print(merged_list.val, end=" -> ")
 #     merged_list = merged_list.next
 
-def removeDuplicates(nums):
-    for i in range(len(nums)):
+# def removeDuplicates(nums):
+#     for i in range(len(nums)):
         # if nums[i] == nums[]
