@@ -1,13 +1,13 @@
 # 100+ Python challenging programming exercises for Python 3
 
 ## 1. Level description
-### Level 1	Beginner 
+### Level 1	Beginner
 Beginner means someone who has just gone through an introductory Python course. He can solve some problems with 1 or 2 Python classes or functions. Normally, the answers could directly be found in the textbooks.
 
-### Level 2	Intermediate 
+### Level 2	Intermediate
 Intermediate means someone who has just learned Python, but already has a relatively strong programming background from before. He should be able to solve problems which may involve 3 or 3 Python classes or functions. The answers cannot be directly be found in the textbooks.
 
-### Level 3	Advanced. 
+### Level 3	Advanced.
 He should use Python to solve more complex problem using more rich libraries functions and data structures and algorithms. He is supposed to solve the problem using several Python standard packages and advanced techniques.
 
 ----
@@ -29,7 +29,7 @@ Question:
 Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both included).
 The numbers obtained should be printed in a comma-separated sequence on a single line.
 
-Hints: 
+Hints:
 Consider use range(#begin, #end) method
 
 Solution:
@@ -135,7 +135,7 @@ class InputOutString(object):
 
     def getString(self):
         self.s = input()
-    
+
     def printString(self):
         print(self.s.upper())
 
@@ -161,7 +161,7 @@ The output of the program should be:
 
 Hints:
 If the output received is in decimal form, it should be rounded off to its nearest value (for example, if the output received is 26.0, it should be printed as 26)
-In case of input data being supplied to the question, it should be assumed to be a console input. 
+In case of input data being supplied to the question, it should be assumed to be a console input.
 
 Solution:
 ```python
@@ -186,7 +186,7 @@ Example
 Suppose the following inputs are given to the program:
 3,5
 Then, the output of the program should be:
-[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]] 
+[[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]
 
 Hints:
 Note: In case of input data being supplied to the question, it should be assumed to be a console input in a comma-separated form.
@@ -627,7 +627,7 @@ print(int(round(math.sqrt(pos[1]**2+pos[0]**2))))
 Level 3
 
 Question:
-Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically. 
+Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically.
 Suppose the following input is supplied to the program:
 New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
 Then, the output should be:
@@ -701,7 +701,7 @@ print(input.__doc__)
 
 def square(num):
     '''Return the square value of the input number.
-    
+
     The input number must be integer.
     '''
     return num ** 2
@@ -724,7 +724,7 @@ Solution:
 class Person:
     # Define the class parameter "name"
     name = "Person"
-    
+
     def __init__(self, name = None):
         # self.name is the instance parameter
         self.name = name
@@ -831,7 +831,7 @@ def printValue(s1,s2):
     else:
         print(s1)
         print(s2)
-        
+
 printValue("one","three")
 
 ```
@@ -849,7 +849,7 @@ def checkValue(n):
         print("It is an even number")
     else:
         print("It is an odd number")
-        
+
 checkValue(7)
 
 ### Question 33
@@ -868,7 +868,7 @@ def printDict():
     d[2]=2**2
     d[3]=3**2
     print(d)
-        
+
 printDict()
 ```
 ### Question 34
@@ -907,7 +907,7 @@ def printDict():
 	d=dict()
 	for i in range(1,21):
 		d[i]=i**2
-	for (k,v) in d.items():	
+	for (k,v) in d.items():
 		print(v)
 
 printDict()
@@ -929,7 +929,7 @@ def printDict():
 	d=dict()
 	for i in range(1,21):
 		d[i]=i**2
-	for k in d.keys():	
+	for k in d.keys():
 		print(k)
 
 printDict()
@@ -1017,7 +1017,7 @@ printList()
 ```
 
 ### Question 41
-Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included). 
+Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included).
 
 Hints:
 
@@ -1033,11 +1033,11 @@ def printTuple():
 	for i in range(1,21):
 		li.append(i**2)
 	print(tuple(li))
-		
+
 printTuple()
 ```
 ### Question 42
-With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line. 
+With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line.
 
 Hints:
 
@@ -1053,7 +1053,7 @@ print(tp2)
 ```
 
 ### Question 43
-Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10). 
+Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10).
 
 Hints:
 
@@ -1072,7 +1072,7 @@ tp2=tuple(li)
 print(tp2)
 ```
 ### Question 44
-Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No". 
+Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No".
 
 Hints:
 
@@ -1175,7 +1175,7 @@ American.printNationality()
 ```
 
 ### Question 51
-Define a class named American and its subclass NewYorker. 
+Define a class named American and its subclass NewYorker.
 
 Hints:
 
@@ -1196,7 +1196,7 @@ print(aNewYorker)
 ```
 
 ### Question 52
-Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area. 
+Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area.
 
 Hints:
 
@@ -1216,7 +1216,7 @@ print aCircle.area()
 ```
 
 ### Question 53
-Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area. 
+Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area.
 
 Hints:
 
@@ -1314,7 +1314,7 @@ class MyError(Exception):
     Attributes:
         msg  -- explanation of the error
     """
-    
+
     def __init__(self, msg):
         self.msg = msg
 
@@ -2137,7 +2137,7 @@ print(list(itertools.permutations([1,2,3])))
 ```
 
 ### Question 100
-Write a program to solve a classic ancient Chinese puzzle: 
+Write a program to solve a classic ancient Chinese puzzle:
 We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have?
 
 Hint:
