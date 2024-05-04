@@ -237,10 +237,81 @@
 # for number in divisible.divisible_by_seven():
 #     print(number)
 
-def divisible_by_seven(number):
-    for i in range(0, number):
-        if i % 7 == 0:
-            yield i
+# question 21
+# import math
+#
+# position = [0, 0]
+# while True:
+#     s = input()
+#     if not s:
+#         break
+#     movement = s.split(" ")
+#     direction = movement[0]
+#     steps = int(movement[1])
+#     if direction == "UP":
+#         position[0] += steps
+#     elif direction == "DOWN":
+#         position[0] -= steps
+#     elif direction == "LEFT":
+#         position[1] -= steps
+#     elif direction == "RIGHT":
+#         position[1] += steps
+#     else:
+#         pass
+#
+# print(int(round(math.sqrt(position[1] ** 2 + position[0] ** 2))))
+
+# question 22
+# def word_frequency(sentence):
+#     words = sentence.split()
+#     frequency = {}
+#
+#     for word in words:
+#         if word not in frequency:
+#             frequency[word] = 1
+#         else:
+#             frequency[word] += 1
+#
+#     sorted_frequency = dict(sorted(frequency.items()))
+#
+#     for word, freq in sorted_frequency.items():
+#         print(f"{word}:{freq}")
+#
+# sentence = "New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3."
+# word_frequency(sentence)
+
+# question 23
+# def square(num):
+#     return num ** 2
+#
+#
+# print(square(2))
+
+# question 24
+# def my_function():
+#     """
+#     This is a docstring for my_function.
+#     You can include a description of what the function does here.
+#     """
+#     pass
+#
+#
+# print(my_function.__doc__)
+# print(abs.__doc__)
+
+# question 25
+# class MyClass:
+#     param = "Class Parameter"
+#
+#     def __init__(self, param=None):
+#         self.param = param if param else MyClass.param
+#
+#
+# instance1 = MyClass()
+# print(instance1.param)
+#
+# instance2 = MyClass("Instance Parameter")
+# print(instance2.param)
 
 
-print(list(divisible_by_seven(100)))
+
