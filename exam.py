@@ -127,43 +127,135 @@
 # print('success!')
 
 # --------------------------------------------
-def can_place_knight(board, row, col):
-    # Check for knights in the 'L' shape positions
-    moves = [(2, 1), (1, 2), (-1, 2), (-2, 1), (-2, -1), (-1, -2), (1, -2), (2, -1)]
-    for move in moves:
-        r, c = row + move[0], col + move[1]
-        if 0 <= r < 8 and 0 <= c < 8 and (board[r][c] == 'knight' or board[r][c] == 'rook'):
-            return False
+# def can_place_knight(board, row, col):
+#     # Check for knights in the 'L' shape positions
+#     moves = [(2, 1), (1, 2), (-1, 2), (-2, 1), (-2, -1), (-1, -2), (1, -2), (2, -1)]
+#     for move in moves:
+#         r, c = row + move[0], col + move[1]
+#         if 0 <= r < 8 and 0 <= c < 8 and (board[r][c] == 'knight' or board[r][c] == 'rook'):
+#             return False
+#
+#     # Check for rook in the same row or column
+#     for i in range(8):
+#         if board[i][col] == 'rook' or board[row][i] == 'rook':
+#             return False
+#
+#     return True
+#
+#
+# def place_knights(board):
+#     count = 0
+#     for i in range(8):
+#         for j in range(8):
+#             if board[i][j] != 'knight' and board[i][j] != 'rook' and can_place_knight(board, i, j):
+#                 board[i][j] = 'knight'
+#                 count += 1
+#     return count, board
+#
+#
+# chessboard = [['a8', 'b8', 'c8', 'd8', 'e8', 'f8', 'g8', 'h8'],
+#               ['a7', 'b7', 'c7', 'd7', 'e7', 'f7', 'g7', 'h7'],
+#               ['a6', 'b6', 'c6', 'd6', 'e6', 'f6', 'g6', 'h6'],
+#               ['a5', 'b5', 'c5', 'rook', 'e5', 'f5', 'g5', 'h5'],
+#               ['a4', 'b4', 'c4', 'd4', 'e4', 'f4', 'g4', 'h4'],
+#               ['a3', 'b3', 'c3', 'd3', 'e3', 'f3', 'g3', 'h3'],
+#               ['a2', 'knight', 'c2', 'd2', 'e2', 'f2', 'g2', 'h2'],
+#               ['a1', 'b1', 'c1', 'd1', 'e1', 'f1', 'g1', 'h1']]
+#
+# knight_count, updated_chessboard = place_knights(chessboard)
+#
+# print(f"Knight Count: {knight_count}")
+# for row in updated_chessboard:
+#     print(row)
 
-    # Check for rook in the same row or column
-    for i in range(8):
-        if board[i][col] == 'rook' or board[row][i] == 'rook':
-            return False
+# --------------------------------------------
+# N = int(input("Enter the number of stations: "))
+# M = int(input("Enter the number of passengers: "))
+#
+# routes = [0] * (N + 1)
+# print(routes)
+# for _ in range(M):
+#     name = input("Enter the passenger's name: ")
+#     entry = int(input("Enter the entry station number: "))
+#     exit = int(input("Enter the exit station number: "))
+#
+#     for i in range(entry, exit):
+#         routes[i] += 1
+#     print(routes)
+#
+# max_passengers = max(routes)
+# print("Routes with the most passengers:")
+# for i in range(1, N + 1):
+#     if routes[i] == max_passengers:
+#         print(f"{i}-{i + 1}")
 
-    return True
+# --------------------------------------------
+# floors = [[] for _ in range(11)]
+# print(floors)
+# for i in range(10):
+#     line = input("Enter the floors where the users go to: ")
+#     if line != "-":
+#         for floor in line.split(","):
+#             floors[int(floor)].append(floor)
+#     print(floors)
+#
+# print(floors)
+# for i in range(10, -1, -1):
+#     if floors[i]:
+#         print(",".join(floors[i]))
+#     else:
+#         print("-")
+#     print(floors)
+# --------------------------------------------
+import sqlite3
 
+conn = sqlite3.connect('airplanes.db')
 
-def place_knights(board):
-    count = 0
-    for i in range(8):
-        for j in range(8):
-            if board[i][j] != 'knight' and board[i][j] != 'rook' and can_place_knight(board, i, j):
-                board[i][j] = 'knight'
-                count += 1
-    return count, board
+cursor = conn.cursor()
 
+cursor.execute('''
+    CREATE TABLE airplane (
+        id INTEGER PRIMARY KEY AUTO_INCREMENT,
+        type VARCHAR(17),
+        trip INTEGER,
+        town_from VARCHAR(30),
+        town_to VARCHAR(30),
+        time TIME
+    )
+''')
 
-chessboard = [['a8', 'b8', 'c8', 'd8', 'e8', 'f8', 'g8', 'h8'],
-              ['a7', 'b7', 'c7', 'd7', 'e7', 'f7', 'g7', 'h7'],
-              ['a6', 'b6', 'c6', 'd6', 'e6', 'f6', 'g6', 'h6'],
-              ['a5', 'b5', 'c5', 'rook', 'e5', 'f5', 'g5', 'h5'],
-              ['a4', 'b4', 'c4', 'd4', 'e4', 'f4', 'g4', 'h4'],
-              ['a3', 'b3', 'c3', 'd3', 'e3', 'f3', 'g3', 'h3'],
-              ['a2', 'knight', 'c2', 'd2', 'e2', 'f2', 'g2', 'h2'],
-              ['a1', 'b1', 'c1', 'd1', 'e1', 'f1', 'g1', 'h1']]
+airplanes = [
+    ('Boeing 747', 101, 'New York', 'London', '07:30:00'),
+    ('Airbus A380', 102, 'Paris', 'Tokyo', '11:15:00'),
+    ('Boeing 777', 103, 'Sydney', 'Los Angeles', '13:45:00'),
+    ('Airbus A350', 104, 'Beijing', 'New York', '14:20:00'),
+    ('Boeing 737', 105, 'London', 'Berlin', '01:30:00'),
+    ('Airbus A320', 106, 'Madrid', 'Rome', '02:15:00'),
+    ('Boeing 787', 107, 'Dubai', 'Paris', '06:45:00'),
+    ('Airbus A330', 108, 'Tokyo', 'Sydney', '09:20:00'),
+    ('Boeing 767', 109, 'Los Angeles', 'New York', '05:30:00'),
+    ('Airbus A340', 110, 'Berlin', 'Madrid', '02:45:00')
+]
 
-knight_count, updated_chessboard = place_knights(chessboard)
+cursor.executemany('''
+    INSERT INTO airplane (type, trip, town_from, town_to, time)
+    VALUES (?, ?, ?, ?, ?)
+''', airplanes)
 
-print(f"Knight Count: {knight_count}")
-for row in updated_chessboard:
-    print(row)
+cursor.execute('''
+    SELECT * FROM airplane
+    WHERE time = (SELECT MIN(time) FROM airplane)
+''')
+print(cursor.fetchall())
+
+cursor.execute('''
+    SELECT town_to, COUNT(*) as flight_count
+    FROM airplane
+    GROUP BY town_to
+    ORDER BY flight_count DESC
+    LIMIT 3
+''')
+
+conn.commit()
+
+conn.close()

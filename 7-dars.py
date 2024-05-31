@@ -35,15 +35,33 @@
 # print(result)
 
 
-dct = {
-    2: 10,
-    3: 20,
-    4: 30,
-    1: 55,
-    5: 25
-}
-# key_sorted_dct = {key: dct[key] for key in sorted(dct)}
-# key_sorted_dct = sorted(dct.items())
-value_sorted_dct = dict(sorted(list(dct.items()), key=lambda tpl: tpl[1]))
+# dct = {
+#     2: 10,
+#     3: 20,
+#     4: 30,
+#     1: 55,
+#     5: 25
+# }
+# # key_sorted_dct = {key: dct[key] for key in sorted(dct)}
+# # key_sorted_dct = sorted(dct.items())
+# value_sorted_dct = dict(sorted(list(dct.items()), key=lambda tpl: tpl[1]))
+#
+# print(value_sorted_dct)
 
-print(value_sorted_dct)
+# str1 = 'listen'
+# cond = True
+# str2 = 'silent'
+#
+# for i in str1:
+#     if i not in str2:
+#         print('Anagram emas')
+#         cond = False
+#         break
+#
+# if cond:
+#     print('Anagram')
+
+def recursive_array_sum(arr):
+    if len(arr) == 1:
+        return arr[0]
+    return arr[0] + recursive_array_sum(arr[1:])
